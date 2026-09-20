@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Env (never commit secrets)
+.env
+.env*.local
+.env*.production
+
+# Prisma
+prisma/migrations/dev.db*
+*.db
+*.db-journal
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# TypeScript build info
+*.tsbuildinfo
+tsconfig.tsbuildinfo
