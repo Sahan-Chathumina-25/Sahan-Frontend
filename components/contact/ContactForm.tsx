@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Send } from "lucide-react";
 import { contactSchema, type ContactInput } from "@/lib/validation";
+import { apiUrl } from "@/lib/api";
 import { FormModal, type FormStatus } from "@/components/contact/FormModal";
 import { cn } from "@/lib/utils";
 
@@ -59,7 +60,7 @@ export function ContactForm() {
     if (isStaticExport) return;
     setStatus({ status: "loading" });
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(apiUrl("/api/contact"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
