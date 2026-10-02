@@ -67,6 +67,30 @@ body {
   animation: packet-travel 4s linear infinite;
 }
 
+/* Page transition: fade + rise keyed off the route so the element remounts
+   and replays on every navigation. No fill-mode: the resting state is the
+   visible state, so a failed/absent animation can never hide content. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-transition {
+  animation: page-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
 /* Accessible focus ring */
 :focus-visible {
   outline: 2px solid #38bdf8;
