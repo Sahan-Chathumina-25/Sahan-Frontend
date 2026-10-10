@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
 import { veedizSvg } from "./veedizSvg";
 
@@ -106,17 +107,23 @@ export function VeedizWordmark() {
 
   return (
     <>
-      <div
-        ref={stageRef}
-        role="img"
-        aria-label="VEEDIZ"
-        className="veediz-stage mx-auto w-full max-w-4xl"
-      >
-        <div
-          ref={tiltRef}
-          className="veediz-tilt"
-          dangerouslySetInnerHTML={{ __html: veedizSvg }}
-        />
+      <div ref={stageRef} className="veediz-stage mx-auto w-full max-w-6xl">
+        <div ref={tiltRef} className="veediz-tilt">
+          <div
+            className="veediz-wordmark"
+            role="img"
+            aria-label="VEEDIZ"
+            dangerouslySetInnerHTML={{ __html: veedizSvg }}
+          />
+          <Image
+            src="/images/portrait-cutout.webp"
+            alt="Portrait of Sahan Chathumina"
+            width={960}
+            height={960}
+            className="veediz-portrait"
+            priority
+          />
+        </div>
       </div>
       <p className="mt-5 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-paper-dim/60">
         Hover a facet · move to tilt

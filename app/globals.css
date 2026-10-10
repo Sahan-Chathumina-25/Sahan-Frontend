@@ -103,9 +103,46 @@ body {
 }
 
 .veediz-tilt {
+  /* Why: flex row seats the cutout portrait beside the wordmark so both tilt together. */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
   transform-style: preserve-3d;
   will-change: transform;
   transition: transform 0.1s ease-out;
+}
+
+/* Why: lets the SVG shrink fluidly while the portrait keeps a fixed slot. */
+.veediz-wordmark {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Why: cutout sits on the page as-is — no backdrop, just a restrained depth shadow. */
+.veediz-portrait {
+  flex: 0 0 auto;
+  width: clamp(240px, 34%, 420px);
+  height: auto;
+  align-self: flex-end;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+  /* Why: softens the cutout's hard bottom edge so it settles into the backdrop. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+}
+
+/* Why: stack on small screens so wordmark + portrait never overflow horizontally. */
+@media (max-width: 767px) {
+  .veediz-tilt {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .veediz-portrait {
+    width: min(72%, 300px);
+    align-self: center;
+  }
 }
 
 .veediz-stage svg {
