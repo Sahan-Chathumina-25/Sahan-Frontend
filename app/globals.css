@@ -99,49 +99,51 @@ body {
 
 /* VEEDIZ wordmark: low-poly facets with damped 3D tilt (ported effect) */
 .veediz-stage {
+  /* Why: flex row seats the Core card beside the wordmark; perspective applies to direct children only. */
   perspective: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
 }
 
 .veediz-tilt {
-  /* Why: flex row seats the cutout portrait beside the wordmark so both tilt together. */
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  /* Why: tilting box for the wordmark alone so the Core card avoids the preserve-3d subtree. */
+  flex: 1 1 auto;
+  min-width: 0;
   transform-style: preserve-3d;
   will-change: transform;
   transition: transform 0.1s ease-out;
 }
 
-/* Why: lets the SVG shrink fluidly while the portrait keeps a fixed slot. */
-.veediz-wordmark {
-  flex: 1 1 auto;
-  min-width: 0;
+/* Why: fixed slot for the Core card beside the wordmark. */
+.veediz-side {
+  flex: 0 0 auto;
+  width: clamp(260px, 36%, 440px);
 }
 
 /* Why: cutout sits on the page as-is — no backdrop, just a restrained depth shadow. */
-.veediz-portrait {
-  flex: 0 0 auto;
-  width: clamp(240px, 34%, 420px);
+.hero-portrait {
+  display: block;
+  width: min(100%, 420px);
   height: auto;
-  align-self: flex-end;
+  margin-inline: auto;
   filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
   /* Why: softens the cutout's hard bottom edge so it settles into the backdrop. */
   -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
 }
 
-/* Why: stack on small screens so wordmark + portrait never overflow horizontally. */
+/* Why: stack on small screens so wordmark + Core card never overflow horizontally. */
 @media (max-width: 767px) {
-  .veediz-tilt {
+  .veediz-stage {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
 
-  .veediz-portrait {
-    width: min(72%, 300px);
-    align-self: center;
+  .veediz-side {
+    width: min(100%, 440px);
   }
 }
 

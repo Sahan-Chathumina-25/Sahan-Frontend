@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FolderGit2, Mail } from "lucide-react";
-import { NetworkVisualization } from "@/components/hero/NetworkVisualization";
 import { VeedizWordmark } from "@/components/hero/VeedizWordmark";
 import { Reveal } from "@/components/animations/Reveal";
 import { SectionHeading, Card } from "@/components/ui/SectionHeading";
@@ -86,7 +86,14 @@ export default function HomePage() {
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <NetworkVisualization />
+            <Image
+              src="/images/portrait-cutout.webp"
+              alt="Portrait of Sahan Chathumina"
+              width={960}
+              height={960}
+              priority
+              className="hero-portrait"
+            />
           </Reveal>
         </div>
       </section>

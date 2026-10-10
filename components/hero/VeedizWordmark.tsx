@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
+import { NetworkVisualization } from "./NetworkVisualization";
 import { veedizSvg } from "./veedizSvg";
 
 // Why: tilt/highlight constants ported from the reference effect (script.js).
@@ -115,14 +115,9 @@ export function VeedizWordmark() {
             aria-label="VEEDIZ"
             dangerouslySetInnerHTML={{ __html: veedizSvg }}
           />
-          <Image
-            src="/images/portrait-cutout.webp"
-            alt="Portrait of Sahan Chathumina"
-            width={960}
-            height={960}
-            className="veediz-portrait"
-            priority
-          />
+        </div>
+        <div className="veediz-side">
+          <NetworkVisualization />
         </div>
       </div>
       <p className="mt-5 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-paper-dim/60">
