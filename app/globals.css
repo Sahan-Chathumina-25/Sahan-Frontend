@@ -96,3 +96,44 @@ body {
   outline: 2px solid #38bdf8;
   outline-offset: 2px;
 }
+
+/* VEEDIZ wordmark: low-poly facets with damped 3D tilt (ported effect) */
+.veediz-stage {
+  perspective: 1100px;
+}
+
+.veediz-tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.veediz-stage svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 28px 44px hsl(170, 80%, 40% / 0.2));
+}
+
+/* Hide the artwork's white background rect; CSS controls sizing. */
+.veediz-stage svg rect {
+  display: none;
+}
+
+.veediz-stage svg path {
+  stroke: none;
+  cursor: pointer;
+  pointer-events: all;
+  transition:
+    fill 0.6s ease-out 0.3s,
+    filter 0.6s ease-out,
+    opacity 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veediz-tilt,
+  .veediz-stage svg path {
+    transition: none;
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, FolderGit2, Mail } from "lucide-react";
 import { NetworkVisualization } from "@/components/hero/NetworkVisualization";
+import { VeedizWordmark } from "@/components/hero/VeedizWordmark";
 import { Reveal } from "@/components/animations/Reveal";
 import { SectionHeading, Card } from "@/components/ui/SectionHeading";
 import { ArticleCard } from "@/components/articles/ArticleCard";
@@ -34,7 +35,10 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section aria-labelledby="hero-heading" className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pt-20">
+      <section
+        aria-labelledby="hero-heading"
+        className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pt-20"
+      >
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <Reveal>
@@ -43,7 +47,10 @@ export default function HomePage() {
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 id="hero-heading" className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-paper sm:text-5xl lg:text-6xl">
+              <h1
+                id="hero-heading"
+                className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-paper sm:text-5xl lg:text-6xl"
+              >
                 Building secure systems. <span className="text-primary">Connecting ideas.</span>
               </h1>
             </Reveal>
@@ -84,6 +91,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* VEEDIZ WORDMARK */}
+      <section aria-label="VEEDIZ wordmark" className="mx-auto max-w-6xl px-4 pb-6 pt-2 sm:px-6">
+        <Reveal>
+          <VeedizWordmark />
+        </Reveal>
+      </section>
+
       {/* QUICK STATS — honest only */}
       <section aria-label="At a glance" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -118,14 +132,20 @@ export default function HomePage() {
           ))}
         </div>
         <Reveal className="mt-6">
-          <Link href="/about" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+          >
             Full background on the about page <ArrowRight size={15} />
           </Link>
         </Reveal>
       </section>
 
       {/* FEATURED PROJECTS */}
-      <section aria-labelledby="featured-projects-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section
+        aria-labelledby="featured-projects-heading"
+        className="mx-auto max-w-6xl px-4 py-14 sm:px-6"
+      >
         <SectionHeading
           index="02"
           eyebrow="Selected work"
@@ -136,7 +156,10 @@ export default function HomePage() {
       </section>
 
       {/* LATEST ARTICLES */}
-      <section aria-labelledby="latest-articles-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section
+        aria-labelledby="latest-articles-heading"
+        className="mx-auto max-w-6xl px-4 py-14 sm:px-6"
+      >
         <SectionHeading
           index="03"
           eyebrow="Notes & write-ups"
@@ -151,7 +174,10 @@ export default function HomePage() {
           ))}
         </div>
         <Reveal className="mt-6">
-          <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+          <Link
+            href="/articles"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+          >
             Browse all articles <ArrowRight size={15} />
           </Link>
         </Reveal>
@@ -165,7 +191,8 @@ export default function HomePage() {
               Have a lab, idea, or opportunity to discuss?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-paper-dim">
-              I&apos;m always interested in networking labs, security study, and collaborative builds.
+              I&apos;m always interested in networking labs, security study, and collaborative
+              builds.
             </p>
             <Link
               href="/contact"
