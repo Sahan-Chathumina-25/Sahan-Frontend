@@ -27,6 +27,28 @@ body {
   overflow-x: hidden;
 }
 
+/* Why: single source of truth for the page container — 1240px max-width
+   keeps content in the 1200–1280px band; horizontal padding steps up at
+   the tablet (640px) and desktop (1024px) breakpoints. */
+.container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 1240px;
+  padding-inline: 16px;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: 40px;
+  }
+}
+
 /* Subtle engineering grid backdrop */
 .bg-grid {
   background-image:

@@ -21,7 +21,7 @@ const journey = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6">
+    <div className="container-page pb-20 pt-20 md:pb-28 md:pt-24">
       <Reveal>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">About</p>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-paper sm:text-5xl">
@@ -30,7 +30,7 @@ export default function AboutPage() {
       </Reveal>
 
       {/* 01 PROFILE */}
-      <section aria-labelledby="profile-heading" className="mt-14">
+      <section aria-labelledby="profile-heading" className="mt-12 md:mt-20">
         <SectionHeading
           index="01"
           eyebrow="Profile"
@@ -73,7 +73,7 @@ export default function AboutPage() {
       </section>
 
       {/* 02 EDUCATION */}
-      <section aria-labelledby="education-heading" className="mt-16">
+      <section aria-labelledby="education-heading" className="mt-12 md:mt-20">
         <SectionHeading
           index="02"
           eyebrow="Education"
@@ -87,7 +87,7 @@ export default function AboutPage() {
       </section>
 
       {/* 03 TECHNICAL FOCUS */}
-      <section aria-labelledby="focus-heading" className="mt-16">
+      <section aria-labelledby="focus-heading" className="mt-12 md:mt-20">
         <SectionHeading
           index="03"
           eyebrow="Technical focus"
@@ -105,7 +105,7 @@ export default function AboutPage() {
       </section>
 
       {/* 04 CREATIVE SIDE */}
-      <section aria-labelledby="creative-heading" className="mt-16">
+      <section aria-labelledby="creative-heading" className="mt-12 md:mt-20">
         <SectionHeading
           index="04"
           eyebrow="Creative side"
@@ -130,7 +130,7 @@ export default function AboutPage() {
       </section>
 
       {/* 05 CURRENT JOURNEY */}
-      <section aria-labelledby="journey-heading" className="mt-16">
+      <section aria-labelledby="journey-heading" className="mt-12 md:mt-20">
         <SectionHeading
           index="05"
           eyebrow="Current journey"

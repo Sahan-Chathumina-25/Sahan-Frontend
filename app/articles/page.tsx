@@ -28,7 +28,7 @@ export default function ArticlesPage() {
   const featured = useMemo(() => articles.filter((a) => a.featured), []);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6">
+    <div className="container-page pb-20 pt-20 md:pb-28 md:pt-24">
       <Reveal>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Articles</p>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-paper sm:text-5xl">
@@ -36,14 +36,17 @@ export default function ArticlesPage() {
         </h1>
         <p className="mt-4 max-w-2xl leading-relaxed text-paper-dim">
           Short write-ups on networking, security, and development. Seeded posts are labelled{" "}
-          <span className="font-semibold text-secondary">SAMPLE</span> — illustrative examples
-          until real articles are published.
+          <span className="font-semibold text-secondary">SAMPLE</span> — illustrative examples until
+          real articles are published.
         </p>
       </Reveal>
 
       {featured.length > 0 && (
-        <section aria-labelledby="featured-articles-heading" className="mt-12">
-          <h2 id="featured-articles-heading" className="font-display text-xl font-semibold text-paper">
+        <section aria-labelledby="featured-articles-heading" className="mt-12 md:mt-16">
+          <h2
+            id="featured-articles-heading"
+            className="font-display text-xl font-semibold text-paper"
+          >
             Featured
           </h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -56,7 +59,7 @@ export default function ArticlesPage() {
         </section>
       )}
 
-      <section aria-labelledby="browse-heading" className="mt-14">
+      <section aria-labelledby="browse-heading" className="mt-12 md:mt-16">
         <h2 id="browse-heading" className="font-display text-xl font-semibold text-paper">
           Browse all
         </h2>
@@ -65,7 +68,11 @@ export default function ArticlesPage() {
             Search articles
           </label>
           <div className="relative sm:max-w-xs sm:flex-1">
-            <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-paper-dim/60" aria-hidden="true" />
+            <Search
+              size={16}
+              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-paper-dim/60"
+              aria-hidden="true"
+            />
             <input
               id="article-search"
               type="search"
@@ -75,7 +82,11 @@ export default function ArticlesPage() {
               className="w-full rounded-md border border-white/10 bg-ink-950/70 py-2.5 pl-9 pr-3 text-sm text-paper placeholder:text-paper-dim/40 outline-none focus:border-primary/60"
             />
           </div>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter articles by category">
+          <div
+            className="flex flex-wrap gap-2"
+            role="group"
+            aria-label="Filter articles by category"
+          >
             {articleCategories.map((c) => (
               <button
                 key={c}

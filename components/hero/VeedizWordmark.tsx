@@ -108,7 +108,7 @@ export function VeedizWordmark() {
 
   return (
     <div className="veediz-intro">
-      <div ref={stageRef} className="veediz-stage mx-auto w-full max-w-6xl">
+      <div ref={stageRef} className="veediz-stage w-full">
         <div ref={tiltRef} className="veediz-tilt">
           <Reveal className="veediz-tagline-reveal">
             <p className="veediz-tagline-wrap">

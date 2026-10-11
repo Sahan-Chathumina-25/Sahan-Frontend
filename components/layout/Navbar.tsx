@@ -29,17 +29,19 @@ export function Navbar() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open ]);
+  }, [open]);
 
   return (
     <>
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 border-b transition-colors",
-          scrolled ? "border-white/10 bg-ink-950/85 backdrop-blur-md" : "border-transparent bg-transparent"
+          scrolled
+            ? "border-white/10 bg-ink-950/85 backdrop-blur-md"
+            : "border-transparent bg-transparent"
         )}
       >
-        <nav aria-label="Primary" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <nav aria-label="Primary" className="container-page flex h-16 items-center justify-between">
           <Link
             href="/"
             className="font-display text-sm font-bold tracking-[0.4em] text-paper transition-colors hover:text-primary"
@@ -49,8 +51,7 @@ export function Navbar() {
           </Link>
           <ul className="hidden items-center gap-1 md:flex">
             {siteConfig.nav.map((item) => {
-              const active =
-                item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
               return (
                 <li key={item.href}>
                   <Link

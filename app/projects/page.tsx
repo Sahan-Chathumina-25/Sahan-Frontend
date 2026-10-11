@@ -33,20 +33,20 @@ export default function ProjectsPage() {
   const featured = useMemo(() => projects.filter((p) => p.featured), []);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6">
+    <div className="container-page pb-20 pt-20 md:pb-28 md:pt-24">
       <Reveal>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Projects</p>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-paper sm:text-5xl">
           Labs, builds & experiments.
         </h1>
         <p className="mt-4 max-w-2xl leading-relaxed text-paper-dim">
-          Networking labs, security practice, automation scripts, and web builds. Select any
-          project for the problem, the approach, and the stack.
+          Networking labs, security practice, automation scripts, and web builds. Select any project
+          for the problem, the approach, and the stack.
         </p>
       </Reveal>
 
       {/* Featured */}
-      <section aria-labelledby="featured-heading" className="mt-12">
+      <section aria-labelledby="featured-heading" className="mt-12 md:mt-16">
         <h2 id="featured-heading" className="font-display text-xl font-semibold text-paper">
           Featured
         </h2>
@@ -60,11 +60,15 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filter + grid */}
-      <section aria-labelledby="all-heading" className="mt-14">
+      <section aria-labelledby="all-heading" className="mt-12 md:mt-16">
         <h2 id="all-heading" className="font-display text-xl font-semibold text-paper">
           All projects
         </h2>
-        <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter projects by category">
+        <div
+          className="mt-4 flex flex-wrap gap-2"
+          role="group"
+          aria-label="Filter projects by category"
+        >
           {projectCategories.map((category) => (
             <button
               key={category}
@@ -96,10 +100,13 @@ export default function ProjectsPage() {
       </section>
 
       {/* GitHub */}
-      <section aria-labelledby="github-heading" className="mt-14">
+      <section aria-labelledby="github-heading" className="mt-12 md:mt-16">
         <Reveal>
           <div className="rounded-xl border border-white/10 bg-ink-800/60 p-6 backdrop-blur">
-            <h2 id="github-heading" className="flex items-center gap-2 font-display text-lg font-semibold text-paper">
+            <h2
+              id="github-heading"
+              className="flex items-center gap-2 font-display text-lg font-semibold text-paper"
+            >
               <FolderGit2 size={18} className="text-primary" /> Open source
             </h2>
             {repos && repos.length > 0 ? (

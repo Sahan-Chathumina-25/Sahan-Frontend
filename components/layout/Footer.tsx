@@ -56,14 +56,14 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative z-10 border-t border-white/10 bg-ink-950/80 backdrop-blur">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
+      <div className="container-page grid gap-8 py-12 md:grid-cols-3">
         <div>
           <p className="font-display text-sm font-bold tracking-[0.4em] text-paper">
             {siteConfig.name}
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-paper-dim">
-            {siteConfig.tagline}. Technology-focused student working across networks, security,
-            and software.
+            {siteConfig.tagline}. Technology-focused student working across networks, security, and
+            software.
           </p>
           <SocialLinks className="mt-4" />
         </div>
@@ -72,7 +72,10 @@ export function Footer() {
           <ul className="mt-3 space-y-2">
             {siteConfig.nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-sm text-paper-dim transition-colors hover:text-primary">
+                <Link
+                  href={item.href}
+                  className="text-sm text-paper-dim transition-colors hover:text-primary"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -80,7 +83,9 @@ export function Footer() {
           </ul>
         </nav>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-paper-dim">Local time</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-paper-dim">
+            Local time
+          </p>
           <LiveClock className="mt-3 block font-mono text-sm text-paper" />
           <p className="mt-1 text-xs text-paper-dim/70">Asia/Colombo · UTC+5:30</p>
           <p className="mt-4 text-xs text-paper-dim/70">
