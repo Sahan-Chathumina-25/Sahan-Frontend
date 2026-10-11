@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="container-page py-24 text-center">
+    <div className="container-page py-16 text-center">
       <div className="mx-auto max-w-2xl">
         <p className="font-mono text-sm text-primary">404</p>
         <h1 className="mt-3 font-display text-4xl font-bold text-paper">Packet lost.</h1>

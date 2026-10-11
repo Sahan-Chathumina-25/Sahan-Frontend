@@ -43,7 +43,7 @@ export default function ArticlePage({ params }: { readonly params: { slug: strin
   };
 
   return (
-    <article className="container-page pb-20 pt-20 md:pb-28 md:pt-24">
+    <article className="container-page pb-12 pt-20 md:pb-16 md:pt-24">
       <div className="mx-auto max-w-3xl">
         <script
           type="application/ld+json"

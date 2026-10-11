@@ -35,10 +35,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section
-        aria-labelledby="hero-heading"
-        className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28"
-      >
+      <section aria-labelledby="hero-heading" className="container-page pb-10 pt-16 md:pb-14">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="max-w-2xl">
             <Reveal>
@@ -99,14 +96,14 @@ export default function HomePage() {
       </section>
 
       {/* VEEDIZ WORDMARK */}
-      <section aria-label="VEEDIZ wordmark" className="container-page py-10 md:py-14 lg:py-16">
+      <section aria-label="VEEDIZ wordmark" className="container-page py-8 md:py-10 lg:py-12">
         <Reveal>
           <VeedizWordmark />
         </Reveal>
       </section>
 
       {/* QUICK STATS — honest only */}
-      <section aria-label="At a glance" className="container-page py-10 md:py-14 lg:py-16">
+      <section aria-label="At a glance" className="container-page py-8 md:py-10 lg:py-12">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {quickStats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.06}>
@@ -124,7 +121,7 @@ export default function HomePage() {
       </section>
 
       {/* SKILLS PREVIEW */}
-      <section aria-labelledby="skills-heading" className="container-page py-12 md:py-20 lg:py-28">
+      <section aria-labelledby="skills-heading" className="container-page py-8 md:py-12 lg:py-16">
         <SectionHeading
           index="01"
           eyebrow="What I work with"
@@ -151,7 +148,7 @@ export default function HomePage() {
       {/* FEATURED PROJECTS */}
       <section
         aria-labelledby="featured-projects-heading"
-        className="container-page py-12 md:py-20 lg:py-28"
+        className="container-page py-8 md:py-12 lg:py-16"
       >
         <SectionHeading
           index="02"
@@ -165,7 +162,7 @@ export default function HomePage() {
       {/* LATEST ARTICLES */}
       <section
         aria-labelledby="latest-articles-heading"
-        className="container-page py-12 md:py-20 lg:py-28"
+        className="container-page py-8 md:py-12 lg:py-16"
       >
         <SectionHeading
           index="03"
@@ -191,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* CONTACT CTA */}
-      <section aria-labelledby="cta-heading" className="container-page py-12 md:py-20 lg:py-28">
+      <section aria-labelledby="cta-heading" className="container-page py-8 md:py-12 lg:py-16">
         <Reveal>
           <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-ink-800 via-ink-800 to-primary/10 p-8 text-center sm:p-12">
             <h2 id="cta-heading" className="font-display text-2xl font-bold text-paper sm:text-3xl">

@@ -28,7 +28,7 @@ export default function ArticlesPage() {
   const featured = useMemo(() => articles.filter((a) => a.featured), []);
 
   return (
-    <div className="container-page pb-20 pt-20 md:pb-28 md:pt-24">
+    <div className="container-page pb-12 pt-20 md:pb-16 md:pt-24">
       <Reveal>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Articles</p>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-paper sm:text-5xl">
@@ -42,7 +42,7 @@ export default function ArticlesPage() {
       </Reveal>
 
       {featured.length > 0 && (
-        <section aria-labelledby="featured-articles-heading" className="mt-12 md:mt-16">
+        <section aria-labelledby="featured-articles-heading" className="mt-8 md:mt-12">
           <h2
             id="featured-articles-heading"
             className="font-display text-xl font-semibold text-paper"
@@ -59,7 +59,7 @@ export default function ArticlesPage() {
         </section>
       )}
 
-      <section aria-labelledby="browse-heading" className="mt-12 md:mt-16">
+      <section aria-labelledby="browse-heading" className="mt-8 md:mt-12">
         <h2 id="browse-heading" className="font-display text-xl font-semibold text-paper">
           Browse all
         </h2>

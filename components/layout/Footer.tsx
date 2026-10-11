@@ -56,7 +56,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative z-10 border-t border-white/10 bg-ink-950/80 backdrop-blur">
-      <div className="container-page grid gap-8 py-12 md:grid-cols-3">
+      <div className="container-page grid gap-8 py-10 md:grid-cols-3">
         <div>
           <p className="font-display text-sm font-bold tracking-[0.4em] text-paper">
             {siteConfig.name}

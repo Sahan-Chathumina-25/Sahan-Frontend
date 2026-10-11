@@ -33,7 +33,7 @@ export default function ProjectsPage() {
   const featured = useMemo(() => projects.filter((p) => p.featured), []);
 
   return (
-    <div className="container-page pb-20 pt-20 md:pb-28 md:pt-24">
+    <div className="container-page pb-12 pt-20 md:pb-16 md:pt-24">
       <Reveal>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Projects</p>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-paper sm:text-5xl">
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
       </Reveal>
 
       {/* Featured */}
-      <section aria-labelledby="featured-heading" className="mt-12 md:mt-16">
+      <section aria-labelledby="featured-heading" className="mt-8 md:mt-12">
         <h2 id="featured-heading" className="font-display text-xl font-semibold text-paper">
           Featured
         </h2>
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filter + grid */}
-      <section aria-labelledby="all-heading" className="mt-12 md:mt-16">
+      <section aria-labelledby="all-heading" className="mt-8 md:mt-12">
         <h2 id="all-heading" className="font-display text-xl font-semibold text-paper">
           All projects
         </h2>
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* GitHub */}
-      <section aria-labelledby="github-heading" className="mt-12 md:mt-16">
+      <section aria-labelledby="github-heading" className="mt-8 md:mt-12">
         <Reveal>
           <div className="rounded-xl border border-white/10 bg-ink-800/60 p-6 backdrop-blur">
             <h2
