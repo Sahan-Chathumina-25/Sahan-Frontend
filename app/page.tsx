@@ -15,7 +15,7 @@ import { skillCategories } from "@/data/education";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Sahan Chathumina",
   description:
     "Sahan Chathumina — technology-focused student working across network engineering, cybersecurity, and software development.",
   alternates: { canonical: "/" },
