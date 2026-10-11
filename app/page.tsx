@@ -37,7 +37,7 @@ export default function HomePage() {
       {/* HERO */}
       <section
         aria-labelledby="hero-heading"
-        className="container-page pb-16 pt-20 md:pb-20"
+        className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28"
       >
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="max-w-2xl">

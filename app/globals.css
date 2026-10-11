@@ -27,13 +27,13 @@ body {
   overflow-x: hidden;
 }
 
-/* Why: single source of truth for the page container — 1240px max-width
-   keeps content in the 1200–1280px band; horizontal padding steps up at
-   the tablet (640px) and desktop (1024px) breakpoints. */
+/* Why: single source of truth for the page container — 86% viewport width (1580px cap)
+   so side margins stay ~10% like the reference design; horizontal
+   padding steps up at the tablet (640px) and desktop (1024px) breakpoints. */
 .container-page {
   width: 100%;
   margin-inline: auto;
-  max-width: 1240px;
+  max-width: 1580px;
   padding-inline: 16px;
 }
 
@@ -45,7 +45,8 @@ body {
 
 @media (min-width: 1024px) {
   .container-page {
-    padding-inline: 40px;
+    padding-inline: 32px;
+    max-width: min(1580px, 86%);
   }
 }
 
