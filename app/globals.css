@@ -147,6 +147,13 @@ body {
   }
 }
 
+/* Why: the artwork's viewBox has ~19% empty headroom above the letters; a
+   negative top margin (percentage resolves against width, so it scales with
+   the SVG) pulls the letters up to sit tight under the tagline. */
+.veediz-wordmark {
+  margin-top: -18.5%;
+}
+
 .veediz-stage svg {
   width: 100%;
   height: auto;
@@ -175,4 +182,40 @@ body {
   .veediz-stage svg path {
     transition: none;
   }
+}
+
+/* VEEDIZ tagline: plain white caption sitting tight above the wordmark. */
+.veediz-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.veediz-tagline-reveal {
+  display: block;
+  width: 100%;
+}
+
+.veediz-tagline-wrap {
+  margin: 0 0 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-align: center;
+  overflow-x: clip;
+}
+
+.veediz-tagline {
+  display: inline-block;
+  max-width: 100%;
+  font-family: var(--font-grotesk), var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  /* Why: ~28 chars fit one line at every width; 0.75rem floor keeps 320px
+     viewports from overflowing, 1.125rem caps growth on wide screens. */
+  font-size: clamp(0.75rem, 2.2vw, 1.125rem);
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #ffffff;
 }

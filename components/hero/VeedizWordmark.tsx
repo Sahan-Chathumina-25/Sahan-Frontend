@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
+import { Reveal } from "@/components/animations/Reveal";
 import { NetworkVisualization } from "./NetworkVisualization";
 import { veedizSvg } from "./veedizSvg";
 
@@ -106,9 +107,14 @@ export function VeedizWordmark() {
   }, [reduceMotion]);
 
   return (
-    <>
+    <div className="veediz-intro">
       <div ref={stageRef} className="veediz-stage mx-auto w-full max-w-6xl">
         <div ref={tiltRef} className="veediz-tilt">
+          <Reveal className="veediz-tagline-reveal">
+            <p className="veediz-tagline-wrap">
+              <span className="veediz-tagline">I&apos;m the CEO & Co-Founder of</span>
+            </p>
+          </Reveal>
           <div
             className="veediz-wordmark"
             role="img"
@@ -123,6 +129,6 @@ export function VeedizWordmark() {
       <p className="mt-5 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-paper-dim/60">
         Hover a facet · move to tilt
       </p>
-    </>
+    </div>
   );
 }
